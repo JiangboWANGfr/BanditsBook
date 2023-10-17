@@ -24,13 +24,13 @@ algo4 = Exp3(0.2, [])
 algos = [algo1, algo2, algo3, algo4]
 
 for algo in algos:
-  algo.initialize(n_arms)
+    algo.initialize(n_arms)
 
 for t in range(1000):
-  for algo in algos:
-    chosen_arm = algo.select_arm()
-    reward = arms[chosen_arm].draw()
-    algo.update(chosen_arm, reward)
+    for algo in algos:
+        chosen_arm = algo.select_arm()
+        reward = arms[chosen_arm].draw()
+        algo.update(chosen_arm, reward)
 
 algo1.counts
 algo1.values
