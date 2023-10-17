@@ -1,4 +1,6 @@
-execfile("core.py")
+from arms.bernoulli import BernoulliArm
+from testing_framework.tests import test_algorithm
+
 from algorithms.ucb.ucb2 import *
 import random
 
@@ -6,7 +8,7 @@ random.seed(1)
 means = [0.1, 0.1, 0.1, 0.1, 0.9]
 n_arms = len(means)
 random.shuffle(means)
-arms = map(lambda (mu): BernoulliArm(mu), means)
+arms = map(lambda mu: BernoulliArm(mu), means)
 print("Best arm is " + str(ind_max(means)))
 
 for alpha in [0.1, 0.3, 0.5, 0.7, 0.9]:
